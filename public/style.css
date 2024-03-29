@@ -1,0 +1,185 @@
+#div_container{
+    left: 10px;
+    position: absolute;
+    height: calc(100vh - 50px);
+    margin: 0 auto;
+    padding: 15px 0;
+    z-index: 3;
+}
+#containerdescrizione{
+    left: 60px;
+    top: 25%;
+    position: fixed;
+    font-size: 50px;
+    font-family: Electrolize,sans-serif;
+    font-weight: bold;
+    color: white;
+    z-index: 3;
+    background: rgba(103, 102, 102, 0.85);
+    border-radius: 40px;
+    padding: 20px;
+    max-width: 20%;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+body{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#container_text{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#btnstart{
+    font-size: 25px;
+    font-family: Electrolize,sans-serif;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: none;
+    background-color: hwb(282 0% 17%);
+    color: white;
+    padding: 10px;
+}
+
+#btnstart:hover{
+    background-color: rgb(97, 4, 137);
+}
+
+.titolo{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+.descrizione{
+    font-size: 25px;
+    padding-top: 30px;
+    color: white;
+    line-height: 1.5;
+}
+
+.testo > div{
+    font-family: Electrolize,sans-serif;
+    padding-left: 50px;
+}
+
+
+#div_header{
+    background-color: darkviolet;
+    border-radius: 30px;
+    display: flex;
+    position: fixed;
+    margin: 0 auto;
+    width: 95%;
+    height: 40px;
+    padding: 10px;
+    z-index: 3;
+}
+
+
+.logo > img{
+    width: 40%;
+    margin-top: 2px;
+}
+
+.logo{
+    width: 50%;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 20px;
+    background-color: darkviolet;
+    z-index: 3;
+    width: 93%;
+    border-radius: 30px;
+}
+
+nav{
+    width: 60%;
+    margin-right: 3%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 5%;
+}
+
+nav ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+nav button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Electrolize,sans-serif;
+    height: 50px;
+    width: 150px;
+}
+
+nav button:hover{
+    background-color: rgb(181, 179, 179);
+}
+
+#avanti{
+    position: fixed;
+    right: 5%;
+    top: 60%;
+    z-index: 3;
+    font-size: 80px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(128, 128, 128, 0.7);
+    color: black;
+    font-weight: bold;
+}
+
+#indietro{
+    position: fixed;
+    left: 5%;
+    top: 60%;
+    z-index: 3;
+    font-size: 80px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(128, 128, 128, 0.7);
+    color: black;
+    font-weight: bold;
+}
+
+#avanti:hover{
+    background: rgba(128, 128, 128, 1);
+}
+
+#indietro:hover{
+    background: rgba(128, 128, 128, 1);
+}
