@@ -334,11 +334,11 @@ function stato(){
             break;
         case 2:
             iframe.src = "documento2.html";
-            divDescrizione.innerHTML = 'Backend <div class="descrizione">Inolte ho vilupppato molte competenze nello sviluppo backend e nell\'uso di Node.js, Express, Three.js, PHP e SQL per l\'interazione con il database</div>';
+            divDescrizione.innerHTML = 'Backend <div class="descrizione">Inolte ho sviluppato molte competenze nello sviluppo backend e nell\'uso di Node.js, Express, Three.js, PHP e SQL per l\'interazione con il database</div>';
             break;
         case 3:
             iframe.src = "documento3.html";
-            divDescrizione.innerHTML = 'Sviluppo di applicazioni desktop<div class="descrizione">Ho imparato ad usare linguaggi ad oggetti come C++, C# e Java per lo sviluppo di applicazioni desktop e mobile e ho imparato ad usare linguaggi come C ed Assembly</div>';
+            divDescrizione.innerHTML = 'Sviluppo di applicazioni desktop<div class="descrizione">Ho imparato ad usare linguaggi ad oggetti come C++, C# e Java per lo sviluppo di applicazioni desktop e mobile ed ho imparato ad usare linguaggi come C ed Assembly</div>';
             break;
         case 4:
                 iframe.src = "documento4.html";
