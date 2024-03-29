@@ -6,11 +6,12 @@
     padding: 15px 0;
     z-index: 3;
 }
+
 #containerdescrizione{
     left: 60px;
     top: 25%;
     position: fixed;
-    font-size: 50px;
+    font-size: 2vw;
     font-family: Electrolize,sans-serif;
     font-weight: bold;
     color: white;
@@ -19,6 +20,166 @@
     border-radius: 40px;
     padding: 20px;
     max-width: 20%;
+}
+
+.descrizione{
+    font-size: 1vw;
+    padding-top: 30px;
+    color: white;
+    line-height: 1.5;
+}
+
+@media (min-width: 1px) and (max-width: 480px) {
+    #containerdescrizione{
+        left: 20px;
+        right: 20px;
+        top: 100px !important;
+        font-size: 15px;
+        max-width: 100%;
+        
+    }    
+    .logo{
+        display: none;
+    }
+    .descrizione{
+        font-size: 10px;
+        padding-top: 10px;
+        color: white;
+        line-height: 1.5;
+    }
+    .testo{
+        background: rgba(103, 102, 102, 0.695);
+        border-radius: 20px;
+        padding: 10px !important;
+    }
+    .testo > div{
+        padding: 0px !important;
+    }
+    .titolo{
+        font-size: 15px !important;
+    }
+
+    #btnstart{
+        font-size: 15px !important;
+    }
+    nav{
+        width: 100% !important;
+        margin-right: 0% !important;
+        margin-left: 0% !important;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center !important;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: auto !important;
+    }
+    
+    nav ul li:not(:last-child) {
+        margin-right: 0px !important;
+    }
+
+    nav button {
+        font-size: 10px !important;
+        height: 5vh !important;
+        width: 20vw !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1080px) {
+    #containerdescrizione{
+        left: 20px;
+        right: 20px;
+        top: 120px !important;
+        font-size: 20px;
+        max-width: 100%;
+        background: rgba(103, 102, 102, 0.913);
+    }
+    .descrizione{
+        font-size: 15px;
+        padding-top: 15px;
+        color: white;
+        line-height: 1.5;
+    }
+    .testo{
+        background: rgba(103, 102, 102, 0.695);
+        border-radius: 20px;
+        padding: 10px !important;
+    }
+    .testo > div{
+        padding: 0px !important;
+    }
+    .titolo{
+        font-size: 30px !important;
+    }
+
+    #btnstart{
+        font-size: 20px !important;
+    }
+    .logo{
+        display: none;
+    }
+    nav{
+        width: 100% !important;
+        margin-right: 0% !important;
+        margin-left: 0% !important;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center !important;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: auto !important;
+    }
+    
+    nav ul li:not(:last-child) {
+        margin-right: 0px !important;
+    }
+
+    nav button {
+        font-size: 15px !important;
+        height: 5vh !important;
+        width: 20vw !important;
+    }
+}
+
+@media (min-width: 1081px) and (max-width: 1800px) {
+    #containerdescrizione{
+        left: 60px;
+        top: 140px;
+        font-size: 30px;
+        max-width: 50%;
+        background: rgba(103, 102, 102, 0.913);
+    }
+    
+    .descrizione{
+        font-size: 20px;
+        padding-top: 15px;
+        color: white;
+        line-height: 1.5;
+    }
+    .testo{
+        background: rgba(103, 102, 102, 0.695);
+        border-radius: 40px;
+        padding: 20px !important;
+    }
+    .testo > div{
+        padding: 0px !important;
+    }
+
+    #btnstart{
+        font-size: 25px !important;
+    }
 }
 
 canvas {
@@ -51,6 +212,7 @@ body{
     background-color: hwb(282 0% 17%);
     color: white;
     padding: 10px;
+    font-weight: bold;
 }
 
 #btnstart:hover{
@@ -63,12 +225,6 @@ body{
     color: white;
 }
 
-.descrizione{
-    font-size: 25px;
-    padding-top: 30px;
-    color: white;
-    line-height: 1.5;
-}
 
 .testo > div{
     font-family: Electrolize,sans-serif;
@@ -153,27 +309,29 @@ nav button:hover{
 #avanti{
     position: fixed;
     right: 5%;
-    top: 80%;
+    top: 85%;
     z-index: 3;
-    font-size: 80px;
+    font-size: 6vh;
     border: none;
     border-radius: 20px;
     background: rgba(128, 128, 128, 0.7);
     color: black;
     font-weight: bold;
+    max-width: 30vw;
 }
 
 #indietro{
     position: fixed;
     left: 5%;
-    top: 80%;
+    top: 85%;
     z-index: 3;
-    font-size: 80px;
+    font-size: 6vh;
     border: none;
     border-radius: 20px;
     background: rgba(128, 128, 128, 0.7);
     color: black;
     font-weight: bold;
+    max-width: 30vw;
 }
 
 #avanti:hover{

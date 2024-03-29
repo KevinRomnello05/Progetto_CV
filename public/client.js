@@ -5,7 +5,7 @@ import { CSS3DRenderer, CSS3DObject } from 'https://cdn.skypack.dev/three@0.129.
 // Inizializzazione della scena
 var scene = new THREE.Scene();
 const tween = new TWEEN.Tween();
-let flagMonitor = false;
+let flagmonitor = false;
 let IndiceStato = 0;
 let bloccoanimazione = false;
 
@@ -18,19 +18,47 @@ camera.position.x = 4;
 camera.rotation.x = -1;
 camera.rotation.y = 1.2;
 camera.rotation.z = 0.95;
- 
+
+function getDistanza() {
+    var larghezzaSchermo = window.innerWidth;
+    var posizione 
+    if (larghezzaSchermo <= 480) {
+        posizione = {
+            x: -0.44,
+            y: 2.45,
+            z: -1.55
+        };
+    } else if (larghezzaSchermo > 480 && larghezzaSchermo <= 1080) {
+        posizione = {
+            x: -0.44,
+            y: 2.2,
+            z: -2.0
+        };
+    } else if (larghezzaSchermo > 1080 && larghezzaSchermo <= 1800) {
+        posizione = {
+            x: -0.44,
+            y: 2.2,
+            z: -2.0
+        };
+    } else {
+        posizione = {
+            x: -0.6,
+            y: 2.1,
+            z: -2.4
+        };
+    }
+    return posizione;
+}
+
 function animateReverseCameraTransitionBackFromMonitor() {
-    flagMonitor = false;
+    flagmonitor = false;
     rendererCSS3D.domElement.style.zIndex = "0";
     buttonAvanti.style.display = "none";
     buttonIndietro.style.display = "none";
     divDescrizione.style.display = "none";
 
-    const initialPosition = {
-        x: -0.6,
-        y: 2.1,
-        z: -2.4
-    };
+    const initialPosition = getDistanza();
+
     const initialRotation = {
         x: 0,
         y: 0,
@@ -74,9 +102,9 @@ function animateReverseCameraTransitionBackFromMonitor() {
 }
 
 function animateCameraTransitionToMonitor() {
-    flagMonitor = true;
+    flagmonitor = true;
     divText.style.display = "none";
-    
+
     const initialPosition = {
         x: 4,
         y: 3,
@@ -88,11 +116,8 @@ function animateCameraTransitionToMonitor() {
         z: 0.95
     };
 
-    const finalPosition = {
-        x: -0.6,
-        y: 2.1,
-        z: -2.4
-    };
+    const finalPosition = getDistanza();
+
     const finalRotation = {
         x: 0,
         y: 0,
@@ -283,33 +308,33 @@ scene.add(directionalLight2);
 const buttoninizio = document.getElementById('btnstart');
 
 // Aggiungi un event listener al pulsante di inizio.
-buttoninizio.addEventListener('click', function() {
+buttoninizio.addEventListener('click', function () {
     IndiceStato = 1;
     bloccoanimazione = false;
     stato();
 });
 
 // Aggiungi un event listener al pulsante di inizio.
-buttonAvanti.addEventListener('click', function() {
+buttonAvanti.addEventListener('click', function () {
     IndiceStato++;
     bloccoanimazione = false; //blocco animazione serve per non far fare l'animazione alla camera tornando indietro
     stato();
 });
 
 // Aggiungi un event listener al pulsante di inizio.
-buttonIndietro.addEventListener('click', function() {
+buttonIndietro.addEventListener('click', function () {
     IndiceStato--;
     bloccoanimazione = true;
     stato();
 });
 
 // Event listener
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowLeft' && IndiceStato > 0) {
         IndiceStato--;
         bloccoanimazione = true;
         stato();
-    }else if (event.key === 'ArrowRight' && IndiceStato > 0) {
+    } else if (event.key === 'ArrowRight' && IndiceStato > 0) {
         IndiceStato++;
         bloccoanimazione = false;
         stato();
@@ -319,17 +344,16 @@ document.addEventListener('keydown', function(event) {
 //---------------------------------------------------------------------------------------------------------------------
 
 //stato e azioni del tour
-function stato(){
-    switch(IndiceStato){
+function stato() {
+    switch (IndiceStato) {
         case 0:
-            animateReverseCameraTransitionBackFromMonitor();  
+            animateReverseCameraTransitionBackFromMonitor();
             break;
         case 1:
-            if(!bloccoanimazione)
-            {
+            if (!bloccoanimazione) {
                 animateCameraTransitionToMonitor();
             }
-            iframe.src = "documento.html"; 
+            iframe.src = "documento.html";
             divDescrizione.innerHTML = 'Competenze web <div class="descrizione">Negli anni ho sviluppato buone competenze nello sviluppo web perfezionando l\'uso di HTML, CSS e JavaScript</div>';
             break;
         case 2:
@@ -341,12 +365,12 @@ function stato(){
             divDescrizione.innerHTML = 'Sviluppo di applicazioni desktop<div class="descrizione">Ho imparato ad usare linguaggi ad oggetti come C++, C# e Java per lo sviluppo di applicazioni desktop e mobile ed ho imparato ad usare linguaggi come C ed Assembly</div>';
             break;
         case 4:
-                iframe.src = "documento4.html";
-                divDescrizione.innerHTML = 'Vmware iperconvergenza e sicurezza del dato<div class="descrizione">Ho completato un corso su VMware, iperconvergenza e sicurezza dei dati. Ho acquisito competenze nella gestione di ambienti virtualizzati utilizzando VMware vSphere</div>';
+            iframe.src = "documento4.html";
+            divDescrizione.innerHTML = 'Vmware iperconvergenza e sicurezza del dato<div class="descrizione">Ho completato un corso su VMware, iperconvergenza e sicurezza dei dati. Ho acquisito competenze nella gestione di ambienti virtualizzati utilizzando VMware vSphere</div>';
             break;
         case 5:
-                iframe.src = "documento5.html";
-                divDescrizione.innerHTML = 'Contatti<div class="descrizione">Puoi contattarmi al seguente indirizzo mail: kevinromanello99@gmail.com<br>oppure al numero: +39 3923050338<br>Puoi trovarmi su linkedin, visualizzare il CV o inviarmi una E-mail tramite i bottoni nell\'header</div>';
+            iframe.src = "documento5.html";
+            divDescrizione.innerHTML = 'Contatti<div class="descrizione">Puoi contattarmi al seguente indirizzo mail: kevinromanello99@gmail.com<br>oppure al numero: +39 3923050338<br>Puoi trovarmi su linkedin, visualizzare il CV o inviarmi una E-mail tramite i bottoni nell\'header</div>';
             break;
         case 6:
             animateReverseCameraTransitionBackFromMonitor();
@@ -372,7 +396,7 @@ loader.load(
         });
         var modelloCaricato = gltf.scene; // Salva il modello caricato nella variabile
         scene.add(modelloCaricato); // Aggiungi il modello alla scena
-        
+
         // Chiamata alla funzione animate per avviare l'animazione
         animate();
     },
@@ -395,20 +419,23 @@ function aggiornagrandezze() {
     // Calcola la scala necessaria
     const scaleX = planeWidth / pageWidth;
     const scaleY = planeHeight / pageHeight;
-    
+
     // Applica la scala all'oggetto CSS3DObject
     cssObject.scale.set(scaleX, scaleY, 1);
-    
+
 }
 
 // Funzione per gestire il ridimensionamento della finestra
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
+    if(flagmonitor){
+        let nuovaposizione = getDistanza();
+        camera.position.set(nuovaposizione.x,nuovaposizione.y, nuovaposizione.z);
+    }
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
     rendererCSS3D.setSize(window.innerWidth, window.innerHeight);
     aggiornagrandezze();
-    
 }
 window.addEventListener('resize', onWindowResize);
 
