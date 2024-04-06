@@ -21,6 +21,7 @@ camera.rotation.z = 0.95;
 
 function getDistanza() {
     var larghezzaSchermo = window.innerWidth;
+    var altezzaSchermo = window.innerHeight;
     var posizione 
     if (larghezzaSchermo <= 480) {
         posizione = {
@@ -29,17 +30,39 @@ function getDistanza() {
             z: -1.55
         };
     } else if (larghezzaSchermo > 480 && larghezzaSchermo <= 1080) {
-        posizione = {
-            x: -0.44,
-            y: 2.2,
-            z: -2.0
-        };
-    } else if (larghezzaSchermo > 1080 && larghezzaSchermo <= 1800) {
-        posizione = {
-            x: -0.44,
-            y: 2.2,
-            z: -2.0
-        };
+        if(altezzaSchermo > 696){
+            posizione = {
+                x: -0.44,
+                y: 2.2,
+                z: -2.0
+            };
+        }else if(altezzaSchermo > 518){
+            posizione = {
+                x: -0.44,
+                y: 2.45,
+                z: -2.0
+            };
+        }else{
+            posizione = {
+                x: -0.44,
+                y: 2.5,
+                z: -2.0
+            };
+        }
+    } else if (larghezzaSchermo > 1080 && larghezzaSchermo <= 1920) {
+        if(altezzaSchermo > 858){
+            posizione = {
+                x: -0.44,
+                y: 2.2,
+                z: -2.0
+            };
+        }else{
+            posizione = {
+                x: -0.44,
+                y: 2.45,
+                z: -2.0
+            };
+        }
     } else {
         posizione = {
             x: -0.6,
