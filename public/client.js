@@ -393,7 +393,7 @@ function stato() {
             break;
         case 5:
             iframe.src = "documento5.html";
-            divDescrizione.innerHTML = 'Contatti<div class="descrizione">Puoi contattarmi al seguente indirizzo mail: kevinromanello99@gmail.com<br>oppure al numero: +39 3923050338<br>Puoi trovarmi su linkedin, visualizzare il CV o inviarmi una E-mail tramite i bottoni nell\'header</div>';
+            divDescrizione.innerHTML = 'Contatti<div class="descrizione">Puoi contattarmi al seguente indirizzo mail: kevinromanello99@gmail.com<br>oppure al numero: +39 3923050338<br>Puoi trovarmi su linkedin, visualizzare il CV o inviarmi una E-mail tramite i pulsanti nell\'header</div>';
             break;
         case 6:
             animateReverseCameraTransitionBackFromMonitor();
